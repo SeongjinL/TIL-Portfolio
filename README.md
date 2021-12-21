@@ -1,3 +1,3 @@
 # TIL-Portfolio
 
-## Today I Leaned
+## Today I Learned
