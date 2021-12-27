@@ -276,13 +276,13 @@ INSTALLED_APPS += [
       - 문자열에 해당하는 앱 또는 뷰와 연결할 수 있습니다. 
     - view는 route에서 일치하는 패턴을 찾으면, view함수를 호출
       - include()와 같은 경우 하위 `URLconf`에 대한 설정을 호출
-      - 이 `include`함수는 패턴이 추가될 때 마다 만들어줘야 합니다 
+      - 이 `include`함수는 패턴이 추가될 때 마다 만들어줘야 합니다.
 
 ## 뷰 작성하기
 - 장고에서 뷰는 `제어` 역할을 합니다. 
   - `URL`과 `템플릿`
   - `템플릿`과 `모델` 등 의 연결 역할을 해줍니다. 
-  - 가장 많이 사용하게 되는 모델일 것 같아요 
+  - 가장 많이 사용하게 되는 모델일 것 같아요.
 
 - index함수의 정의
 
@@ -299,7 +299,7 @@ def index( request ):
 
 ## 모델 만들기
 - MVC 구조에서 `M(Model)`에 해당하는 내용입니다.
-- 참고에서 모델은 `models.py`로 작성할 수 있습니다
+- 참고에서 모델은 `models.py`로 작성할 수 있습니다.
   - 모델은 자료를 저장할 `테이블`이라고 보면 됩니다.
   - `테이블`은 판다스의 `DataFrame`과 동일한 개념 입니다.
   - 할 일을 저장할 `테이블`을 `models.py`를 통해서 만들어 보겠습니다.
@@ -345,13 +345,13 @@ prompt> python manage.py makemigrations 앱이름
 prompt> python manage.py migrate
 ```
 ## createTodo 기능 추가
-- 전달받은 할일을 디비에 저장
+- 전달받은 할일을 디비에 저장합니다.
 
-  1. URL과 Veiw를 연결
-  2. view에서는 해당 기능을 구현
+  1. URL과 Veiw를 연결합니다.
+  2. view에서는 해당 기능을 구현합니다.
 
 ### urls.py
-- `createTodo` 요청과 views를 연결
+- `createTodo` 요청과 views를 연결합니다.
 - /프로젝트폴더/앱폴더/urls.py
   - 아래와 같이 추가 해줍니다. 
 
@@ -379,12 +379,12 @@ def createTodo( request ):
 ```
 
 ### views.py - 2
-- 입력한 값이 서버로 잘 전달되는지 확인
-  - views.py의 `createTodo`함수를 아래와 같이 수정해서 확인
+- 입력한 값이 서버로 잘 전달되는지 확인합니다
+  - views.py의 `createTodo`함수를 아래와 같이 수정해서 확인합니다
 
 ```
 def createTodo( request ):
-  # 사용자가 입력한 할 일을 잘 받아 오는지 확인
+  # 사용자가 입력한 할 일을 잘 받아 오는지 확인합니다.
   # 입력값 전달은 POST 방식으로, 'todoContent'변수를 통해서 전달이 될겁니다. 
   user_input_str = request.POST['todoContent']
   return HttpResponse(f'사용자가 입력한 값: {user_input_str}')
@@ -392,8 +392,8 @@ def createTodo( request ):
 ## 디비에 저장하기
 
 ### urls.py
-- 입력을 처리하고, 다시 첫 페이지로 돌아가기 위해서 아래와 같이 수정
-  - index에 대해서 `name` 파라미터를 추가
+- 입력을 처리하고, 다시 첫 페이지로 돌아가기 위해서 아래와 같이 수정합니다
+  - index에 대해서 `name` 파라미터를 추가합니다
 
 - /프로젝트폴더/앱폴더/urls.py
 ```
@@ -406,7 +406,7 @@ urlpatterns = [
 ```
 
 ### views.py
-- 전달받은 값을 디비에 저장하기 위한 코드를 추가
+- 전달받은 값을 디비에 저장하기 위한 코드를 추가합니다
 - 프로젝트폴더/앱폴더/views.py
 
 ```
@@ -433,3 +433,85 @@ def createTodo( request ):
   return HttpResponseRedirect(reverse('index'))
 ```
 
+### index.html
+- 책의 예제 입니다. 
+
+```
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Boot strap -->
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- 부가적인 테마 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <style>
+        .content{
+            height: 75%;
+        }
+        .messageDiv{
+            margin-top: 20px;
+            margin-bottom: 50px;
+        }
+        /*
+        .toDoDiv{
+
+        }
+        */
+        .custom-btn{
+            font-size: 10px;
+        }
+        .panel-footer{
+            height:10%;
+            color:gray;
+        }
+    </style>
+
+    <title>To-Do</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="page-header">
+                <h1>To-do List <small>with Django</small></h1>
+            </div>
+        </div>
+        <div class="content">
+            <div class="messageDiv">
+                <form action="./createTodo/" method="POST">{% csrf_token %}
+                    <div class="input-group">
+                        <input id="todoContent" name="todoContent" type="text" class="form-control" placeholder="메모할 내용을 적어주세요">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="submit">메모하기!</button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+
+            <div class="toDoDiv">
+                <ul class="list-group">
+                    {% for todo in todos %}
+                    <form action="./doneTodo/" method="GET">
+                        <div class="input-group" name='todo1'>
+                            <li class="list-group-item">{{ todo.content }}</li>
+                            <input type="hidden" id="todoNum" name="todoNum" value="{{ todo.id }}"></input>
+                            <span class="input-group-addon">
+                                <button type="submit" class="custom-btn btn btn-danger">완료</button>
+                            </span>
+                        </div>
+                    </form>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="panel-footer">
+            실전예제로 배우는 Django. Project1-TodoList
+        </div>
+    </div>
+</body>
+</html>
+```

@@ -77,6 +77,15 @@ document.querySelectorAll('li.nav_item a[data-clk="svc.cafe"]')[0].innerText = '
 ```
 document.body.childNodes[3].childNodes[5].childNodes[5].childNodes[1].childNodes[1].childNodes[1].childNodes[1].childNodes[1].innerText;
 ```
-#### BOM
+### BOM
 - Browser Object Model
-- 
+- `브라우저 객체 모델`
+  - 브라우저 또한 객체로서 관리
+
+- `window`객체 
+  - history: 방문한 페이지에 대한 정보
+    - `window.history.back()`: 이전 페이지
+    - `window.history.forward()`: 다음 페이지
+
+  - location: 현재 열려있는 페이지에 대한 정보
+    - `window.location.href`: 현재 열려있는 페이지의 URL

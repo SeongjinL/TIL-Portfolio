@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+
+  <body>
+    <h2 id='number'>0</h2>
+    <div>
+      <button id='increase'>+1</button>
+      <button id='decrease'>-1</button>
+    </div>
+
+    <script>
+      let number = document.getElementById('number');
+      let up = document.getElementById('increase');
+      let down = document.getElementById('decrease');
+
+      // 요소에 이벤트 달기
+      up.onclick = function () {
+          let count = number.innerText;
+          count = parseInt(count);
+          number.innerText = ++count;
+      };
+
+      down.onclick = function () {
+          let count = number.innerText;
+          count = parseInt(count);
+          number.innerText = --count;
+      }
+
+    </script>
+  </body>
+</html>

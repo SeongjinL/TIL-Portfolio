@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        {% load static %}
+        <link type='text/css' rel='stylesheet' href='{% static "bootstrap.min.css" %}' />
+        <link type='text/css' rel='stylesheet' href='{% static "bootstrap-theme.min.css" %}' />
+        <link type='text/css' rel='stylesheet' href='{% static "list.css" %}' />
+    </head>
+
+    <body>
+        <div class='container'>
+            <form class='form-horizontal' method='post' action=''>
+                <div class='form-group'>
+                    <label for="inputId" class="col-xs-2 col-md-2 control-label">ID</label>
+                    <div class='col-xs-8 col-md-8'>
+                        <input class="form-control" type='text' name='id' id='inputId'>
+                    </div>
+                </div>
+                <div class='form-group'>
+                    <label for="inputPw" class="col-xs-2 col-md-2 contorol-label">PW</label>
+                    <div class='col-xs-8 col-md-8   '>
+                        <input class="form-control" type='password' name='pw' id='inputPw'>
+                    </div>
+                </div>
+                <div class='form-group'>
+                    <div class='col-xs-offset-2 col-xs-10 col-md-10'>
+                        <button class="btn btn-default" type='submit'> 로그인 </button>
+                    </div>
+                </div>
+            </form>
+        </div>    
+    </body>
+</html>
