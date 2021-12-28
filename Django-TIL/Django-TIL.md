@@ -11,11 +11,11 @@
   ```
       Microsoft Windows [Version 10.0.18362.959]
       (c) 2019 Microsoft Corporation. All rights reserved.
-
+  
       C:\sung\workspace>C:/ProgramData/Anaconda3/Scripts/activate
-
+  
       (base) C:\sung\workspace>conda activate seongleee
-
+  
       (seonglee) C:\sung\workspace>
       -------------
       가상환경이 선택된 이후에 명령어를 실행을 해야만 합니다. 
