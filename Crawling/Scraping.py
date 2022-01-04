@@ -18,4 +18,4 @@ for element in td_elements:
   r = element.text.split('\n')[5]
   print(f'영화제목: {title}')
   print(f'평점: {score}')
-  print(f'리뷰: {r}') \ \
+  print(f'리뷰: {r}')
