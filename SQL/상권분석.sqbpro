@@ -21,4 +21,4 @@ group by 시도명, 시군구명
 order by 매장당인구수 asc</sql><current_tab id="0"/></tab_sql></sqlb_project>
 
 
-# 출처 - 
+# 출처 - 공공데이터포털
