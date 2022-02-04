@@ -142,4 +142,4 @@ SQL Server가 설치되면 연습용 데이터베이스 두개가 만들어집�
 - Pubs
 - Northwind
 
-이 두 데이터베이스는 SQL Server를 공부할 때 유용하게 사용될 수 있으며 실제로 여러 교재에서 예제로 사용됩니다. 만일 이 두 데이터베이스에 문제가 생기면 SQL Server 폴더의 Install 폴더에 있는 Instpubs.sql, Instnwnd.sql 스크립트를 수행하여 언제든지 재생성 할 수 있습니다.
+이 두 데이터베이스는 SQL Server를 공부할 때 유용하게 사용될 수 있으며 실제로 여러 교재에서 예제로 사용됩니다. 만일 이 두 데이터베이스에 문제가 생기면 SQL Server 폴더의 Install 폴더에 있는 Instpubs.sql, Instnwnd.sql 스크립트를 수행하여 언제든지 재생성 할 수 있습니다
