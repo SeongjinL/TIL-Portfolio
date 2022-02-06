@@ -1,7 +1,7 @@
 # WordCloud
 
 
-```
+```R
 setwd("C:/Users/sung/Documents/WordC") # 내 워킹 디렉토리 변경
 library(rJava)
 library(RColorBrewer)
