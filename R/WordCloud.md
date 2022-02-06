@@ -1,7 +1,7 @@
 # WordCloud
 
 
-
+```
 setwd("C:/Users/sung/Documents/WordC") # 내 워킹 디렉토리 변경
 library(rJava)
 library(RColorBrewer)
@@ -84,3 +84,4 @@ text7 <- head(text6, 200)
 #wordcloud2(data=text7,color = "random-dark",size=0.6,fontFamily = '나눔바른고딕') # 워드클라우드2 를 이용해서 원형 모양의 클라우드를 생성했습니다
 #letterCloud(data=text7,word="R",wordSize=1, color = "random-dark") # 워드클라우드2 라이브러리 중 글자 모양의 클라우드를 생성했습니다.
 wordcloud2(data=text7,figPath = "bird.jpg",color = "random-dark", size=1) # 워드 클라우드를 이용해서 사진 모양의 클라우드를 생성하였습니다
+```
