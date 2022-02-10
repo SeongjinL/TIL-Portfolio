@@ -76,4 +76,4 @@
   - val tranFile = sc.textFile("firstedtion/ch04/ch04_data_transactions.txt") <- 데이터로드
   - val tranData = tranFile.map(_.split("#")) <- 데이터 피싱
   - val transByCust = tranData.map(tran => (tran(2).tolnt, trna)), <- 배열자체, PairRDD 생성 // tran(2) 는 튜플번호
-- val VS.var: var는 값을 계속 유지함.
+- val VS.var: var는 값을 계속 유지함.    
