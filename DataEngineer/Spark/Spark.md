@@ -51,29 +51,132 @@
 
 # Rair RDD
 
-- pair RDD 실습
+- \- Resilient Distributed DataSet : 쉽게 복원 가능한 분산 데이터 셋
 
-  - 키 및 값 가져오기
-    - transByCust.keys.distinct() <- distinct는 중복 제거
-
-  - 키별 개수 세기
-    - transByCust.countBykey() <- ID, 건 수 별로 표시 됨
-    - transByCust.countByKey().values.sum <- 총 개수
-    - val (cid, purch) = transByCust.countByKey().toSeq.sortBy(_._2).last <- 정렬하여 가져옴
-  - 단일 키로 길 찾기
-    - transByCust.lookup(53) <- 모든 구매 기록
-    - transByCust.lookup(53).foreach(tran => println(tran.mkString(","))) <- 식별이 편하게
-
-##### 스파크에서는 키-값으로 구성된 RDD를 Pair RDD라고 함
-
-실습 : 예제 파일
-
-구매날짜, 시간, 고객ID, 상품ID , 구매 수량, 구매 금액 등 이 기록 되어 있다.
-
-
-
-- section 4.1.2
-  - val tranFile = sc.textFile("firstedtion/ch04/ch04_data_transactions.txt") <- 데이터로드
-  - val tranData = tranFile.map(_.split("#")) <- 데이터 피싱
-  - val transByCust = tranData.map(tran => (tran(2).tolnt, trna)), <- 배열자체, PairRDD 생성 // tran(2) 는 튜플번호
-- val VS.var: var는 값을 계속 유지함.    
+  \- 스파크는 메모리에 데이터를 저장하면서 오류가 생길 수 있는 상황을 줄이고자 메모리를 read-only 형태로 사용한다
+  
+  \- 장애가 발생해도 데이터셋을 재구성 할 수 있다. read-only 상태이기 때문에 수정이 불가하다
+  
+  \- 데이터셋을 중복 저장하지 않는 대신 (변환 연산자의 로그)데이터 셋이 어떻게 만들었는지를 나기는 방신으로 장애 내성을 제공한다
+  
+  \- RDD에 SQL, Streaming, mLib(머신러닝), Graphx 컴포넌트들을 제공한다.
+  
+  ****
+  
+  **RDD 연산자**
+  
+  **map**
+  
+  \- 모든 요소에 임의이 함수를 적용할 수 있는 변환 연산자
+  
+  \- map 함수는 또 다른 함수를 인자로 받아 RDD를 반환
+  
+  ```scala
+  scala> val numbers = sc.parallelize(10 to 50 by 10)
+  
+  numbers: org.apache.spark.rdd.RDD[Int] = ParallelCollectionRDD[0] at parallelize at <console>:24
+  
+  scala> numbers.foreach(x=>println(x))
+  
+  [Stage 0:>                                                         (0 + 0) / 3]10
+  
+  20
+  
+  30
+  
+  40
+  
+  50
+                                                                                 
+  scala> val numbersSquared = numbers.map(num => num*num)
+  
+  numbersSquared: org.apache.spark.rdd.RDD[Int] = MapPartitionsRDD[1] at map at <console>:26
+  
+  scala> numbersSquared.foreach(x=>println(x))
+  
+  100
+  
+  400
+  
+  900
+  
+  1600
+  
+  2500
+  
+  scala> val reversed = numbersSquared.map(x=>x.toString.reverse)
+  
+  reversed: org.apache.spark.rdd.RDD[String] = MapPartitionsRDD[2] at map at <console>:28
+  
+  scala> reversed.foreach(x=>println(x))
+  
+  001
+  
+  004
+  
+  009
+  
+  0061
+  
+  0052
+  
+  scala> val alsoReverse = numbersSquared.map(_.toString.reverse)
+  
+  alsoReverse: org.apache.spark.rdd.RDD[String] = MapPartitionsRDD[3] at map at <console>:28
+  
+  scala> alsoReverse.first
+  
+  res4: String = 001
+  
+  scala> alsoReverse.top(4)
+  
+  res5: Array[String] = Array(009, 0061, 0052, 004)
+  ```
+  
+  **flatMap**
+  
+  \- 주어진 함수의 모든 RDD의 모든 요소에 적용하는 점은 map 과 동일
+  
+  \- 함수가 반환한 배열의 중첩 구조를 한다계 제거하고 모든 배열의 요소를 단일컬랙션으로 통일
+  
+  ```scala
+  
+  #log에 숫자들이 있어있다 log를 가져와 쪼개고 나눠보기
+  
+  scala> val lines = sc.textFile("/home/spark/client-ids.log")
+  
+  lines: org.apache.spark.rdd.RDD[String] = /home/spark/client-ids.log MapPartitionsRDD[1] at textFile at <console>:24
+  
+  scala> val idsStr = lines.map(line => line.split(","))
+  
+  idsStr: org.apache.spark.rdd.RDD[Array[String]] = MapPartitionsRDD[2] at map at <console>:26
+  
+  scala> idsStr.first
+  
+  res3: Array[String] = Array(15, 16, 20, 20, 77, 80, 94, 94, 98, 16, 31, 31, 15, 20)
+  
+  scala> idsStr.collect
+  
+  res4: Array[Array[String]] = Array(Array(15, 16, 20, 20, 77, 80, 94, 94, 98, 16, 31, 31, 15, 20))
+  
+  #flatMap 함수로 쪼개기
+  
+  scala> val ids = lines.flatMap(_.split(","))
+  
+  ids: org.apache.spark.rdd.RDD[String] = MapPartitionsRDD[3] at flatMap at <console>:26
+  
+  scala> ids.collect
+  
+  res5: Array[String] = Array(15, 16, 20, 20, 77, 80, 94, 94, 98, 16, 31, 31, 15, 20)
+  
+  scala> ids.first
+  
+  res6: String = 15
+  
+  
+  scala> ids.collect.mkString(";")
+  
+  res7: String = 15;16;20;20;77;80;94;94;98;16;31;31;15;20
+  ```
+  
+  
