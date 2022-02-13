@@ -1,5 +1,5 @@
 # BIG DATA
-
+   
 ### ICBM
 - 4차 산업혁명을 주도 할 패러다임 ICBM
   - Stage4: 사물인터넷(loT)
