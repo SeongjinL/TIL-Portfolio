@@ -3,7 +3,7 @@
 
 
 
-
+ 
 ## Python 설치 및 설정
 
 - https://www.python.org/downloads/ 로 들어가서 설치해야한다!
