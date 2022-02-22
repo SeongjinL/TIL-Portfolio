@@ -11,7 +11,7 @@
 
 var var1; // var 키워드는 사용하지 않는 것이 좋습니다.
 let var2;
-
+  
 // 변수의 정의
 var2 = 10;
 console.log(var2);
