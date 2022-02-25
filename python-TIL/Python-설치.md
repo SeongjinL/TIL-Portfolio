@@ -4,7 +4,7 @@
 
 
  
-## Python 설치 및 설정
+## Python 설치 및 설정  
 
 - https://www.python.org/downloads/ 로 들어가서 설치해야한다!
 - 만약 설치가 다 되었으면 VSCODE에 확장을 클릭 후 python을 검색 후 설치를 해야한다.
