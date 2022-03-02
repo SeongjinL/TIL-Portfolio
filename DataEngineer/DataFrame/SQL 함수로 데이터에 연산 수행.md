@@ -10,7 +10,7 @@
 
    - from pyspark.sql.functions import * 로 한번에 임포트 가능
 
-- 스칼라 함수             
+- 스칼라 함수              
  
   - abs(절대값), hypot(삼각형의 빗변 길이 계산), log(로그 값 계산), cbrt(세제곱근 계산)
     - length(문자열 길이 반환), trim(문자열의 왼,오 공백 제거),concat(복수의 입력 문자열)
