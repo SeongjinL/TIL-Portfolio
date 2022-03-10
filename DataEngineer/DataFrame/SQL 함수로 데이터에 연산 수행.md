@@ -4,7 +4,7 @@
 
 - [SQL함수 목록](https://spark.apache.org/docs/2.0.0/api/java/org/apache/spark/sql/functions.html)
 
-1. 스칼라 함수와 집계 함수
+1. 스칼라 함수와 집계 함수 
 
    - 각 로우의 단일 컬럼 또는 여러 컬럼 값을 계산해 단일 값을 반환하는 함수  
 
