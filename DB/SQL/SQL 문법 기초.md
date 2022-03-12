@@ -11,7 +11,7 @@
   - ex) SELECT columns1, columns2, .. FROM Table 명
 
 ### SELECT DISTINCT
-
+ 
 - DISTINCT() 
 - 호출된 컬럼안에 있는 `raw`를 중복되지않게 해줍니다.
 - ex) SELECT DISTINCT(columns1) FROM Table명
