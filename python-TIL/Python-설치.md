@@ -8,7 +8,7 @@
 
 - https://www.python.org/downloads/ 로 들어가서 설치해야한다!
 - 만약 설치가 다 되었으면 VSCODE에 확장을 클릭 후 python을 검색 후 설치를 해야한다.
-- https://code.visualstudio.com/download
+- https://code.visualstudio.com/download 
 - python 설치 확인은 명령프롬프트를 열어 python -v 라고 입력창에 입력하면 파이썬이 잘 설치되었고 버젼도 확인 할 수 있다.
 
 ### 개발환경 
