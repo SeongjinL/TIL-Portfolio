@@ -8,7 +8,7 @@
 
    - 각 로우의 단일 컬럼 또는 여러 컬럼 값을 계산해 단일 값을 반환하는 함수  
 
-   - from pyspark.sql.functions import * 로 한번에 임포트 가능
+   - from pyspark.sql.functions import * 로 한번에 임포트 가능 
 
 - 스칼라 함수              
  
