@@ -11,7 +11,7 @@
 - Vagrant
   - Vagrant 다운, 설치
   - [Vagrant 64bit](https://releases.hashicorp.com/vagrant/2.2.19/vagrant_2.2.19_x86_64.msi)
-- Vagrant 박스 메타데이터 다운
+- Vagrant 박스 메타데이터 다운 
 - [spark-in-action.box](https://app.vagrantup.com/anassbo/boxes/spark-in-action-box)
 - 용량이 매우커서 시간이 오래 걸림
 
