@@ -11,7 +11,7 @@
 - https://code.visualstudio.com/download 
 - python 설치 확인은 명령프롬프트를 열어 python -v 라고 입력창에 입력하면 파이썬이 잘 설치되었고 버젼도 확인 할 수 있다.
 
-### 개발환경 
+### 개발환경  
 - IDE(Intergrated Development Environment)
   - 통합개발환경
   - 개발에 필요한 여러가지를 하나의 프로그램으로 다 사용할 수 있는 것
