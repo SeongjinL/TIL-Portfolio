@@ -23,7 +23,7 @@ scala> import spark.implicits._
 ```
 
 
-
+ 
 1. 로우데이터를 튜플형태로 저장한 RDD를 사용하는 방법
    - 각 로우데이터를 튜플로 변경해서 DataFrame으로 변환
 
