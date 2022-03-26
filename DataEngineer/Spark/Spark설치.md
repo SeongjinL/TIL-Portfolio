@@ -15,7 +15,7 @@
 ### Spark
 
 - [스파크설치](https://spark.apache.org/downloads.html)
-- 스파크를 다운 받아서 버전은 3.2.1 하둡버전은 3.3 으로 다운받아서
+- 스파크를 다운 받아서 버전은 3.2.1 하둡버전은 3.3 으로 다운받아서 
 - C 드라이브 C:\Spark\spark-3.2.1-bin-hadoop3.3
 - Hadoop은 C:\Haoop\bin\Winutils.exe
   - [Winutils](https://github.com/cdarlint/winutils])
