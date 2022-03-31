@@ -7,7 +7,7 @@ $nano etc/hadoop/mapred-site.xml
 
 <configuration>
 
-<property>
+<property>  
 
 <name>mapreduce.framework.name</name>
 
