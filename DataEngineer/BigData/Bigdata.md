@@ -8,7 +8,7 @@
   - Stage1: 모바일(Mobile) 과 인공지능(AI)
 
 ### Big Data의 중요성 
-- Data의 종류
+- Data의 종류 
   - 정형데이터: RDBMS, 스프레드시트 
   - 반정형데이터: XML,HTML(스키마포함)
   - 비정형데이터: 분석 가능한 text, image, 동영상, 음성데이터
