@@ -1,0 +1,32 @@
+@charset="utf-8";
+<!-- 웹 폰트로 사용하기 위한 코딩 -->
+@font-face {
+    font-family: 'CookieRun-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/CookieRun-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'MaplestoryOTFLight';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFLight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ************************************* 포스팅 폰트 설정 ************************************* */
+/*@font-face {
+   font-family: 'Apple SD Gothic Neo';
+   font-style: normal;
+   font-weight: 400;
+   src: local('Apple SD Gothic Neo Medium'),
+   url('https://cdn.jsdelivr.net/npm/font-applesdgothicneo@1.0/fonts/400_AppleSDGothicNeo-Medium.woff2') format('woff2'),
+   url('https://cdn.jsdelivr.net/npm/font-applesdgothicneo@1.0/fonts/400_AppleSDGothicNeo-Medium.otf') format('opentype');
+   }
+   @font-face {
+   font-family: 'Apple SD Gothic Neo';
+   font-style: normal;
+   font-weight: 800;
+   src: local('Apple SD Gothic Neo ExtraBold'),
+   url('https://cdn.jsdelivr.net/npm/font-applesdgothicneo@1.0/fonts/800_AppleSDGothicNeo-ExtraBold.woff2') format('woff2'),
+   url('https://cdn.jsdelivr.net/npm/font-applesdgothicneo@1.0/fonts/800_AppleSDGothicNeo-ExtraBold.otf') format('opentype');
+   }*/
